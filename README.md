@@ -12,7 +12,7 @@
    - 3.1 [Overview of Java Programs (Main.java and Main1.java)](#overview-of-java-programs-mainjava-and-main1java)
    - 3.2 [Single-threaded Image Processing in Main.java and Main1.java](#single-threaded-image-processing-in-mainjava-and-main1java)
    - 3.3 [Multi-threaded Processing in Main.java using ExecutorService](#multi-threaded-processing-in-mainjava-using-executorservice)
-   - 3.4 [Multi-threaded Processing in Main1.java with CountDownLatch and ReentrantLock](#34-multi-threaded-processing-in-main1java-with-countdownlatch-and-reentrantlock)
+   - 3.4 [Multi-threaded Processing in Main1.java with CountDownLatch and ReentrantLock](#multi-threaded-processing-in-main1java-with-countdownlatch-and-reentrantlock)
    - 3.5 [Use of AtomicInteger for Synchronization in Main1.java](#35-use-of-atomicinteger-for-synchronization-in-main1java)
    - 3.6 [Key Differences and Challenges in Java Implementations](#36-key-differences-and-challenges-in-java-implementations)
 
@@ -136,5 +136,5 @@ In this project, I have implemented multi-threaded image processing in **Main.ja
 
 For this project, I have implemented multi-threaded image processing to leverage the benefits of parallelism, significantly enhancing performance when processing large images. Although multi-threading introduces some complexity in handling concurrent tasks, the improvements in execution time make it a worthwhile approach for this kind of image processing task.
 
-
+## Multi-threaded Processing in Main1.java with CountDownLatch and ReentrantLock
 
