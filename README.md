@@ -110,6 +110,12 @@ In this project, I have implemented single-threaded image processing in both **M
 
 For this project, I have followed a single-threaded approach, which processes each block one after the other. While this approach works fine for smaller images, it is not as efficient for larger images or for scenarios where faster processing is needed. This single-threaded method is easier to understand and implement but does not take advantage of the full potential of multi-core processors.
 
+This is the code, that I used for `main.java` and `main1.java` to write single-threaded process:
+
+![Single-threaded](images/single_threaded.png)
+
+
+
 
 
 ## Multi-threaded Processing in `Main.java` using `ExecutorService`
