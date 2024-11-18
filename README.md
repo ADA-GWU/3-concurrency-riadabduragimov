@@ -110,7 +110,7 @@ In this project, I have implemented single-threaded image processing in both **M
 
 For this project, I have followed a single-threaded approach, which processes each block one after the other. While this approach works fine for smaller images, it is not as efficient for larger images or for scenarios where faster processing is needed. This single-threaded method is easier to understand and implement but does not take advantage of the full potential of multi-core processors.
 
-This is the code, that I used for `main.java` and `main1.java` to write single-threaded process:
+This is the code, that I used for `Main.java` and `Main1.java` to write single-threaded process:
 
 ![Single-threaded](images/single_threaded.png)
 
@@ -142,6 +142,10 @@ In this project, I have implemented multi-threaded image processing in **Main.ja
 - **Efficient CPU Utilization**: Multi-threading ensures that all available CPU cores are utilized, leading to more efficient processing. This is particularly beneficial when working with large images or when real-time image processing is required.
 
 For this project, I have implemented multi-threaded image processing to leverage the benefits of parallelism, significantly enhancing performance when processing large images. Although multi-threading introduces some complexity in handling concurrent tasks, the improvements in execution time make it a worthwhile approach for this kind of image processing task.
+
+This is the code, that I used for `Main.java` to write multi-threaded process with using ExecutorService:
+
+![ExecutorService](images/executor_service.png)
 
 ## Multi-threaded Processing in Main1.java with CountDownLatch and ReentrantLock
 
