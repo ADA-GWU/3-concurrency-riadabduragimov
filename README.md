@@ -339,6 +339,9 @@ In this project, I implemented single-threaded image processing using Python wit
 - The image is divided into smaller blocks, and each block is processed individually.
 - Real-time updates of the image are displayed during processing.
 
+For this part, I wrote the code to write single-threaded process for `concurrency.py`:
+
+![Single_threaded_python](images/single_threaded_python.png)
 
 ## Multi-threaded Image Processing Approach using Python's threading module
 In this project, I implemented multi-threaded image processing using Python’s `threading` module. This approach divides the image into multiple regions and processes each region in parallel using threads, enabling faster processing compared to the single-threaded approach.
