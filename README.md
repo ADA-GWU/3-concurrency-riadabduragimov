@@ -24,7 +24,7 @@
    - 4.5 [Challenges Encountered in Python Implementation](#challenges-encountered-in-python-implementation)
 
 5. [Performance Analysis](#performance-analysis)
-   - 5.1 [Performance Comparison of Single-threaded vs. Multi-threaded Approaches](#performance-comparison-of-single-threaded-vs-multi-threaded-approaches)
+   - 5.1 [Performance Comparison of Single-threaded vs. Multi-threaded Approaches in Java](#performance-comparison-of-single-threaded-vs-multi-threaded-approaches-in-java)
    - 5.2 [Threading Performance in Python (GIL Considerations)](#threading-performance-in-python-gil-considerations)
    - 5.3 [Performance Optimization Techniques](#performance-optimization-techniques)
 
@@ -66,7 +66,7 @@ For this project, I have used this logic of Block-wise Averaging:
 ## Concurrency in Programming
 Concurrency in programming refers to the ability to execute multiple tasks simultaneously, allowing the system to perform better when dealing with time-consuming operations. In the case of image processing, particularly when handling large images or multiple images, concurrency allows tasks like dividing the image into blocks, processing each block, and performing computations on those blocks to be done in parallel, significantly improving the processing time.
 
-In this project, I explored two approaches to concurrency: single-threaded processing and multi-threaded processing. The single-threaded approach, implemented in Java's Main.java, processes the entire image in a sequential manner. While this is straightforward, it can be inefficient for larger images, as each operation must wait for the previous one to complete.
+In this project, I explored two approaches to concurrency: single-threaded processing and multi-threaded processing. The single-threaded approach, implemented in Java's `Main.java` and `Main1.java`, processes the entire image in a sequential manner. While this is straightforward, it can be inefficient for larger images, as each operation must wait for the previous one to complete.
 
 To address this, I implemented multi-threaded processing using both Java's ExecutorService in Main.java and more advanced thread management in Main1.java using CountDownLatch and ReentrantLock. The use of multi-threading enables parallel processing of image blocks, allowing the system to perform multiple computations at the same time and thereby reducing the overall processing time.
 
@@ -256,7 +256,7 @@ In this project, I have explored various multi-threading techniques and synchron
    - **Main1.java**, on the other hand, relies on manual thread creation with synchronization tools like `CountDownLatch` and `ReentrantLock`, giving finer control over thread behavior and task execution.
 
 2. **Synchronization Mechanisms**:
-   - **Main.java** uses synchronized methods for shared resource access, ensuring thread safety but potentially causing performance bottlenecks in high-concurrency scenarios.
+   - **Main.java** uses synchronized methods for shared resource access, ensuring thread safety but potentially causing performance issues in high-concurrency scenarios.
    - **Main1.java** integrates advanced concurrency tools like `ReentrantLock` for precise locking and `AtomicInteger` for lightweight synchronization, offering improved performance and flexibility.
 
 3. **Task Allocation**:
@@ -446,11 +446,21 @@ Handling errors in a multi-threaded environment is essential to avoid unexpected
 This error-handling strategy allowed the application to continue processing even in the event of thread-specific issues. By logging exceptions, it was possible to debug and identify problems while ensuring that other threads could continue their work without being impacted.
 
 ---
+#### 5. Single-threaded vs. Multi-threaded Performance
 
-In summary, the thread management and synchronization mechanisms in the Python implementation were critical for achieving efficient multi-threaded image processing. By using Python's `threading` module, a thread-safe queue, and proper error handling, the system was able to manage and synchronize multiple threads effectively. The `main.py` and `concurrency.py` files were central to these operations, ensuring smooth execution and robust error management in the multi-threaded environment.
+When I ran `main.py`, the execution time for both single-threaded and multi-threaded approaches was nearly identical. This unexpected outcome is due to the **Global Interpreter Lock (GIL)** in Python, which prevents multiple threads from executing Python bytecode simultaneously, even on multi-core processors. As a result, the multi-threaded implementation could not leverage true parallelism for this CPU-bound image processing task.
+
+In addition to the GIL, other factors contributed to the similar performance:
+
+- **Thread Management Overhead:** The multi-threaded approach introduced additional overhead from creating and managing threads. This overhead offset any potential speedup.
+- **Context Switching:** When running `concurrency.py`, the frequent context switching between threads added delays, further reducing the effectiveness of threading.
+- **Queue Operations:** The use of `queue.Queue` for thread communication ensured thread safety but added latency during the transfer of processed image regions between threads and the main program.
+
+Ultimately, the results showed that the multi-threaded approach did not provide any performance benefit over the single-threaded approach. These challenges highlight the limitations of Python's threading model for CPU-intensive tasks, particularly due to the GIL. To achieve significant performance improvements, it might be necessary to explore alternatives, such as the `multiprocessing` module, which bypasses the GIL, or use a programming language without a GIL.
+
 
 # Performance Analysis
-## Performance Comparison of Single-threaded vs. Multi-threaded Approaches
+## Performance Comparison of Single-threaded vs. Multi-threaded Approaches in Java
 
 The performance of single-threaded and multi-threaded image processing approaches was evaluated in both Java and Python. The comparison was made based on the execution time, system resource utilization, and overall processing speed. The implementation for both languages is discussed below, based on their respective `main.java` and `main1.java` (Java) and `main.py` and `concurrency.py` (Python) files.
 
@@ -582,10 +592,4 @@ To enhance the efficiency of image processing in the Python implementations (`ma
    - Extensive profiling was conducted to identify performance bottlenecks and determine the optimal number of threads for the workload.
    - Multiple configurations were tested to strike the right balance between parallelism and overhead.
 
----
 
-### Outcome
-
-The application of these optimization techniques ensured that the image processing pipeline was as efficient as possible within the constraints of Python's threading model. While the GIL prevented substantial gains in multi-threaded performance, techniques such as thread pool limitation, in-place processing, and efficient queue usage helped maintain responsiveness and minimize resource usage.
-
-For future tasks requiring further performance improvements, adopting alternatives like multiprocessing or GPU-based parallelism can provide substantial benefits.
