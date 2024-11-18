@@ -369,6 +369,10 @@ In this project, I implemented multi-threaded image processing using Python’s 
 - A `queue.Queue` is used for communication between threads, allowing the main thread to receive updated images and display them.
 - Multi-threading improves processing speed by taking advantage of multiple CPU cores.
 
+For this part, I wrote the code to write the multi-threaded process in `concurrency.py`:
+
+![Multi_threaded_python](images/multi_threaded_python.png)
+
 ## Thread Management and Synchronization in Python
 
 In this project, I implemented multi-threaded image processing using Python’s `threading` module. Thread management and synchronization are key aspects of ensuring that the image is processed efficiently and that updates are displayed in real time. Below is an overview of how threads are managed and synchronized during the processing workflow.
