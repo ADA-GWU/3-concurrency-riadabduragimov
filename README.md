@@ -390,6 +390,10 @@ In this project, I implemented multi-threaded image processing using Python’s 
 
    Once created, each thread is started using the `start()` method, which invokes the `run()` method where the actual image processing takes place.
 
+For this part, I wrote code to use `ImageProcessingThread` in `concurrency.py`:
+
+![Image_processing_thread](images/image_processing_thread.png)
+
 2. **Dividing the Image into Regions**:  
    In the `multi_threaded_processing` function, the image is divided into multiple horizontal regions, and each region is processed by a separate thread. The total number of threads is specified by the `num_threads` variable (set to 4 in this case). Each thread processes its respective section of the image, reducing the overall processing time.
 
@@ -405,7 +409,7 @@ In this project, I implemented multi-threaded image processing using Python’s 
 
 ### Thread Management and Synchronization in Python
 
-The following section explains the thread management and synchronization techniques used in the Python implementation of multi-threaded image processing. The information is derived from the `main.py` and `concurrency.py` files, which are the core components of the implementation. These files leverage Python’s `threading` module and other synchronization mechanisms to efficiently handle parallel tasks.
+The following section explains the thread management and synchronization techniques used in the Python implementation of multi-threaded image processing. `main.py` and `concurrency.py` files leverage Python’s `threading` module and other synchronization mechanisms to efficiently handle parallel tasks.
 
 ---
 
