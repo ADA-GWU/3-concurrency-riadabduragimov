@@ -60,6 +60,7 @@ For the project, I implemented block-wise averaging as a preprocessing step. The
  
 For this project, I have used this logic of Block-wise Averaging:
 
+![Block-wise-Averaging](images/block_wise_averaging.png)
 ## Concurrency in Programming
 Concurrency in programming refers to the ability to execute multiple tasks simultaneously, allowing the system to perform better when dealing with time-consuming operations. In the case of image processing, particularly when handling large images or multiple images, concurrency allows tasks like dividing the image into blocks, processing each block, and performing computations on those blocks to be done in parallel, significantly improving the processing time.
 
