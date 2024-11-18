@@ -33,6 +33,8 @@
    - 6.2 [Real-time Image Display and Updates](#62-real-time-image-display-and-updates)
    - 6.3 [Saving Processed Image and User Interaction](#63-saving-processed-image-and-user-interaction)
 7. [How to Run the Project](#how-to-run-the-project)
+   - 7.1 [Java project](#java-project)
+   - 7.2 [Python project](#python-project)
 8. [Conclusion](#conclusion)
    - 8.1 [Summary of Findings from the Java and Python Implementations](#summary-of-findings-from-the-java-and-python-implementations)
    - 8.2 [Lessons Learned from Multi-threading and Synchronization](#lessons-learned-from-multi-threading-and-synchronization)
