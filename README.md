@@ -190,6 +190,9 @@ For this part, I wrote the code that shows how to write the multi-threaded proce
 
 ![Runnable1](images/runnable1.png)
 
+![Runnable2](images/runnable2.png)
+
+
 ## Use of AtomicInteger for Synchronization in Main1.java
 In this project, I have implemented an efficient synchronization mechanism in **Main1.java** using the `AtomicInteger` class. This approach ensures thread-safe updates to shared resources without the need for explicit locks, making the program more lightweight and performant.
 
