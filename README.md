@@ -453,9 +453,6 @@ In addition to the GIL, other factors contributed to the similar performance:
 
 Ultimately, the results showed that the multi-threaded approach did not provide any performance benefit over the single-threaded approach. These challenges highlight the limitations of Python's threading model for CPU-intensive tasks, particularly due to the GIL. To achieve significant performance improvements, it might be necessary to explore alternatives, such as the `multiprocessing` module, which bypasses the GIL, or use a programming language without a GIL.
 
-
-# Performance Analysis
-
 ---
 # User Interface
 
@@ -490,6 +487,8 @@ I also added an event handler with the on_close function, which gracefully exits
 In the main function, I enabled interactive plotting mode with plt.ion() to allow real-time updates during processing and displayed the initial image using display_update. To handle the close event, I connected the on_close function to the window's close action with plt.gcf().canvas.mpl_connect('close_event', on_close).
 
 After the processing is complete, I turned off the interactive mode using plt.ioff() and displayed the final processed image without grid updates. Finally, I ensured the graphical window closes properly by calling plt.close() to clean up resources. These elements create a user-friendly interface for visualizing the processing steps and final results.
+# Visualization and Performance Analysis
+
 
 # How to Run the Project
 ## Java Project
