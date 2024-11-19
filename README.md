@@ -148,7 +148,7 @@ This is the code, that I used for `Main.java` to write multi-threaded process wi
 
 In this project, I have implemented an advanced multi-threaded image processing approach in **Main1.java** using `CountDownLatch` and `ReentrantLock`. This implementation not only takes advantage of concurrent processing but also ensures proper synchronization and coordination between threads.
 
-### Key Components Used:
+### What are they used for?
 
 ### 1. **`CountDownLatch`**
 - `CountDownLatch` is used to synchronize threads by allowing one or more threads to wait until a set of operations being performed by other threads is complete.
@@ -181,7 +181,6 @@ In this project, I have implemented an advanced multi-threaded image processing 
 - **Enhanced Safety**: `ReentrantLock` adds an extra layer of safety by precisely controlling access to shared resources. This is particularly important when processing large images where multiple threads may attempt to modify adjacent regions.
 - **Improved Performance**: Like the `ExecutorService` approach, this implementation leverages multi-threading to speed up image processing. The added synchronization mechanisms ensure correctness without sacrificing performance.
 
-In this project, I have combined `CountDownLatch` and `ReentrantLock` to create a robust and efficient multi-threaded image processing solution. This implementation demonstrates a practical approach to handling synchronization and shared resource management in concurrent programming.
 
 For this part, I wrote the code that shows how to write the multi-threaded process using `CountDownLatch` , `ReentrantLock` , `Runnable` in `Main1.java`:
 
