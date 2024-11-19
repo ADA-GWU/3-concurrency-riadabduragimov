@@ -28,9 +28,7 @@
    - 5.2 [Interface Design for Python](#interface-design-for-python)
 
 6. [Visualization and Performance Analysis](#visualization-and-performance-analysis)
-   - 6.1 [Performance Comparison of Single-threaded vs. Multi-threaded Approaches in Java](#performance-comparison-of-single-threaded-vs-multi-threaded-approaches-in-java)
-   - 6.2 [Threading Performance in Python (GIL Considerations)](#threading-performance-in-python-gil-considerations)
-   - 6.3 [Performance Optimization Techniques](#performance-optimization-techniques)
+
 7. [How to Run the Project](#how-to-run-the-project)
    - 7.1 [Java project](#java-project)
    - 7.2 [Python project](#python-project)
