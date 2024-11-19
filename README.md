@@ -547,6 +547,15 @@ These observations underline the differences in threading efficiency between Jav
 #### Add Java to Environmental Variables:
    - During installation, make sure to check the option that says **Add Java to PATH**. This ensures that you can run Java from the terminal or command prompt.
    - If you missed this step during installation, you can manually add Java's `bin` folder to your system's PATH environment variable.
+#### Adjust Number of Threads based on your PC (optional):
+   - You can change the number of threads based on the number of cores on your PC.
+   - Open `Main.java` and `Main1.java` and change the number of threads.
+   - Change `numThreads` in `Main.java`:
+     
+      ![Num of threads](images/num_thread_java.png)
+   - Change `numThreads` in `Main1.java`:
+     
+      ![Num of threads](images/num_thread_java1.png)
 
 #### Prepare the Image File:
   - Obtain an image file to process and place it in the same directory as `Main.java` and `Main1.java`. Note the filename (e.g., `example.jpg`).   
@@ -592,6 +601,13 @@ These observations underline the differences in threading efficiency between Jav
 
 #### Download Project Files:
 - Download the `main.py` and `concurrency.py` files from the **code folder** in the repository to your local system.
+
+#### Adjust Number of Threads based on your PC (optional):
+   - You can change the number of threads based on the number of cores on your PC.
+   - Open `Concurrency.py` and change the number of threads.
+   - Change `num_threads` in `concurrency.py`:
+
+     ![Num of threads](images/num_thread_python.png)
 
 #### Install Required Libraries:
 - Before running the project, make sure you have the required Python libraries installed:
