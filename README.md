@@ -462,9 +462,9 @@ In `Main.java` and `Main1.java` I used this code to create a user interface for 
 
 ![UserInterface3](images/user_interface3.png)
 
-In this code, I added a graphical user interface to enhance user interaction and visualize the image processing tasks. The JFrame serves as the main application window, and its configuration is handled in the initializeGUI method, where the title, size, and resizable properties are set. The window is made interactive by embedding a custom JPanel called ImagePanel, which is responsible for displaying the processed image.
+In this code, I added a graphical user interface to enhance user interaction and visualize the image processing tasks. The `JFrame` serves as the main application window, and its configuration is handled in the `initializeGUI` method, where the title, size, and resizable properties are set. The window is made interactive by embedding a custom `JPanel` called `ImagePanel`, which is responsible for displaying the processed image.
 
-The ImagePanel class includes a paintComponent method that draws the image on the panel, ensuring it is updated whenever changes occur. To enable dynamic updates, the updateImageDisplay method modifies the current image displayed in the ImagePanel and repaints the panel to reflect the changes in real-time. This approach creates a seamless visualization experience during image processing, allowing users to observe updates as they happen.
+The `ImagePanel` class includes a paintComponent method that draws the image on the panel, ensuring it is updated whenever changes occur. To enable dynamic updates, the `updateImageDisplay` method modifies the current image displayed in the ImagePanel and repaints the panel to reflect the changes in real-time. This approach creates a seamless visualization experience during image processing, allowing users to observe updates as they happen.
 
 By incorporating these GUI elements, the code not only handles image processing logic but also makes the process accessible and visually engaging for users.
 
@@ -477,13 +477,13 @@ In `main.py` I used this code to create a user interface for this project:
 
 ![UserInterface5](images/user_interface5.png)
 
-For this part, I used matplotlib.pyplot to create a graphical interface for displaying the image and its progressive updates during the processing. The display_update function dynamically updates the displayed image with a grid overlay by clearing the previous plot using plt.clf(), rendering the updated image with plt.imshow, and adding grid lines using plt.axvline and plt.axhline. These updates are shown interactively by calling plt.draw() and pausing briefly with plt.pause(0.05) to control the refresh rate.
+For this part, I used `matplotlib.pyplot` to create a graphical interface for displaying the image and its progressive updates during the processing. The `display_update` function dynamically updates the displayed image with a grid overlay by clearing the previous plot using `plt.clf()`, rendering the updated image with `plt.imshow`, and adding grid lines using `plt.axvline` and `plt.axhline`. These updates are shown interactively by calling `plt.draw()` and pausing briefly with `plt.pause(0.05)` to control the refresh rate.
 
-I also added an event handler with the on_close function, which gracefully exits the program when the window is closed by the user. This ensures the program terminates cleanly and provides feedback through a printed message.
+I also added an event handler with the `on_close` function, which gracefully exits the program when the window is closed by the user. This ensures the program terminates cleanly and provides feedback through a printed message.
 
-In the main function, I enabled interactive plotting mode with plt.ion() to allow real-time updates during processing and displayed the initial image using display_update. To handle the close event, I connected the on_close function to the window's close action with plt.gcf().canvas.mpl_connect('close_event', on_close).
+In the main function, I enabled interactive plotting mode with `plt.ion()` to allow real-time updates during processing and displayed the initial image using `display_update`. To handle the close event, I connected the `on_close` function to the window's close action with `plt.gcf().canvas.mpl_connect('close_event', on_close)`.
 
-After the processing is complete, I turned off the interactive mode using plt.ioff() and displayed the final processed image without grid updates. Finally, I ensured the graphical window closes properly by calling plt.close() to clean up resources. These elements create a user-friendly interface for visualizing the processing steps and final results.
+After the processing is complete, I turned off the interactive mode using `plt.ioff()` and displayed the final processed image without grid updates. Finally, I ensured the graphical window closes properly by calling `plt.close()` to clean up resources. These elements create a user-friendly interface for visualizing the processing steps and final results.
 # Visualization and Performance Analysis
 I have uploaded this `image.jpg` to the images folder in repository and used it for checking the performance of each approach in both `Java` and `Python`:
 
