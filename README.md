@@ -549,7 +549,7 @@ The threading performance in Python is heavily influenced by the Global Interpre
 
 ---
 
-### Conclusion
+### Result
 
 The threading performance in Python for this task highlights the limitations imposed by the GIL on CPU-bound operations. While the multi-threaded implementation added complexity, it did not deliver performance benefits over the single-threaded approach. For future tasks requiring efficient parallelism in Python, exploring GIL-free solutions such as multiprocessing or optimized external libraries is recommended.
 
