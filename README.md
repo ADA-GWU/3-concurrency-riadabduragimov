@@ -482,7 +482,7 @@ After the processing is complete, I turned off the interactive mode using `plt.i
 
 ---
 # Visualization and Performance Analysis
-I have uploaded this `image.jpg` to the `images` folder in repository and used it for checking the performance of each approach in both `Java` and `Python`:
+I have uploaded this `image.jpg` to the [images](/images) folder and used it for checking the performance of each approach in both `Java` and `Python`:
 
 ![Image](images/image.jpg)
 
@@ -535,6 +535,7 @@ These observations underline the differences in threading efficiency between Jav
 
 ---
 # How to Run the Project
+I have uploaded an instruction video in [video](/video) folder, so that you can see how this project works.
 ## Java Project
 #### Prerequisites:  
    Ensure you have a working Java Development Kit (JDK) installed. You can download and install the JDK from the [Oracle website](https://www.oracle.com/java/technologies/downloads/#jdk23-windows). After installation, verify the installation by running the following command in your terminal:
@@ -646,3 +647,7 @@ Additionally, I ensured the programs displayed images in a resized format during
 
 Through this project, I demonstrated my ability to implement efficient image processing pipelines, apply concurrency techniques, and analyze performance differences between programming languages. This experience also emphasized the importance of understanding language-specific constraints, such as Python’s GIL, when designing multi-threaded applications. Moreover, the user-friendly interface allowed users to load images, specify block sizes, and choose between processing modes, enhancing the practical usability of the project.
 
+---
+# References
+1.http://djnutte.com/pdf/Fall%202020%20Concepts%20of%20Programming%20Languages%2012th%20Edition%20.pdf (13-th Chapter)
+2.https://docs.oracle.com/javase/tutorial/essential/concurrency/runthread.html
