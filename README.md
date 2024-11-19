@@ -547,7 +547,7 @@ I have uploaded an instruction video in [video](/video) folder, so that you can 
    - If you missed this step during installation, you can manually add Java's `bin` folder to your system's PATH environment variable.
 #### Adjust Number of Threads based on your PC (optional):
    - You can change the number of threads based on the number of cores on your PC.
-   - Open `Main.java` and `Main1.java` and change the number of threads.
+   - Download and open `Main.java` and `Main1.java` from [code](/code) folder.
    - Change `numThreads` in `Main.java`:
      
       ![Num of threads](images/num_thread_java.png)
