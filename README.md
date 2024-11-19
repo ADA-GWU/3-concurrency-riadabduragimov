@@ -624,22 +624,22 @@ After the processing is complete, I turned off the interactive mode using plt.io
 
 # How to Run the Project
 ## Java Project
-1. **Prerequisites**:  
+#### Prerequisites:  
    Ensure you have a working Java Development Kit (JDK) installed. You can download and install the JDK from the [Oracle website](https://www.oracle.com/java/technologies/downloads/#jdk23-windows). After installation, verify the installation by running the following command in your terminal:
    ```bash
    javac -version
-
-2. **Add Java to Environmental Variables**:
+   ```
+#### Add Java to Environmental Variables:
    - During installation, make sure to check the option that says **Add Java to PATH**. This ensures that you can run Java from the terminal or command prompt.
    - If you missed this step during installation, you can manually add Java's `bin` folder to your system's PATH environment variable.
 
-3. **Prepare the Image File**:
-   Obtain an image file to process and place it in the same directory as `Main.java` and `Main1.java`. Note the filename (e.g., `example.jpg`).
- **Compile the Code**:
-   Open a terminal, navigate to the directory containing Main.java or Main1.java, and compile the files using:
+#### Prepare the Image File:
+  - Obtain an image file to process and place it in the same directory as `Main.java` and `Main1.java`. Note the filename (e.g., `example.jpg`).   
+  - Open a terminal, navigate to the directory containing Main.java or Main1.java, and compile the files using:
    ```bash
    javac Main.java
    javac Main1.java
+   ```
 #### Run the Program:
    Execute the program by passing three arguments:
    
@@ -661,7 +661,7 @@ After the processing is complete, I turned off the interactive mode using plt.io
     java Main1 example.jpg 50 M
 #### Output:
    - The program processes the image and saves the result as result.jpg in the same directory. A GUI window displays the progress during processing.
-#### Optional Configurations**:
+#### Optional Configurations:
    - Adjust the square size for finer or coarser processing blocks. Use single-threaded mode for a straightforward implementation or multi-threaded mode for 
     faster performance.
 #### Troubleshooting:
@@ -687,4 +687,23 @@ After the processing is complete, I turned off the interactive mode using plt.io
 You can install these libraries using the following command:
 ```bash
 pip install opencv-python numpy matplotlib
+```
+#### Run the Program:
+   - Once you're in the project folder, you can run the Python script using the following command format:
+   
+    ```bash
+    python main.py <file_name> <square_size> <mode>
+    
+    // For Example
+    
+    python main.py example.jpg 100 S
+    
+   - <file_name>: The path to the image you want to process (e.g., example.jpg).
+   - <square_size>: The side length of each averaging square (e.g., 100).
+   - <mode>: The processing mode, either S for single-threaded or M for multi-threaded.
+#### Check the Output:
+   - The program will process the image and save the result as result.jpg in the same directory.
+   - A GUI window will display the progress of the processing with grid lines over the image. The processing time will also be printed in the terminal.
+
+## Conclusion
 
