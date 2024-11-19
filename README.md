@@ -705,5 +705,5 @@ pip install opencv-python numpy matplotlib
    - The program will process the image and save the result as result.jpg in the same directory.
    - A GUI window will display the progress of the processing with grid lines over the image. The processing time will also be printed in the terminal.
 
-## Conclusion
+# Conclusion
 
