@@ -487,6 +487,54 @@ In the main function, I enabled interactive plotting mode with plt.ion() to allo
 
 After the processing is complete, I turned off the interactive mode using plt.ioff() and displayed the final processed image without grid updates. Finally, I ensured the graphical window closes properly by calling plt.close() to clean up resources. These elements create a user-friendly interface for visualizing the processing steps and final results.
 # Visualization and Performance Analysis
+I have uploaded this image.jpg to the images folder in repository and used it for checking the performance of each approach in both Java and Python:
+
+![Image](images/image.jpg)
+
+## Java Programs (`Main.java` and `Main1.java`)
+![Concurrency_java_s_main](images/concurrency_java_s_main.png)
+![Concurrency_java_m_main](images/concurrency_java_m_main.png)
+![Concurrency_java_main1](images/concurrency_java_main1.png)
+
+
+- **Single-Threaded Performance**:  
+  Both `Main.java` and `Main1.java` exhibited identical performance in the single-threaded mode (`S`). The processing was completed in **104 seconds**.  
+
+- **Multi-Threaded Performance**:  
+  In multi-threaded mode (`M`), both Java programs also performed identically, completing the process in **13 seconds**. This demonstrates the significant performance improvement achieved through parallelization.  
+  - **Number of Threads Used**: 8 threads.
+
+## Python Program (`main.py`)
+
+![Concurrency_python](images/concurrency_python.png)
+
+- **Single-Threaded Performance**:  
+  The single-threaded process completed in **3 minutes and 12 seconds**.  
+
+- **Multi-Threaded Performance**:  
+  Surprisingly, the multi-threaded process took **3 minutes and 51 seconds**, which is slower than the single-threaded mode. While this contradicts the expected outcome (multi-threaded mode should ideally be faster), it could be attributed to Python's **Global Interpreter Lock (GIL)**, thread overhead, or implementation inefficiencies.  
+  - **Number of Threads Used**: 4 threads.
+
+## Image Display and Processing
+
+- During the execution of all programs (both Java and Python):
+  - The images were displayed in a **resized format** during the processing to enhance visualization and reduce rendering overhead.
+  - However, the actual processing was applied to the **original image size**, ensuring accurate results. 
+  - Once the processing was complete, the output was saved as `result.jpg` in the same directory, maintaining the **original image size**.
+
+## Observations and Recommendations
+
+1. **Java Multi-Threading Efficiency**:  
+   The Java programs efficiently utilized multi-threading, demonstrating a substantial performance boost in the multi-threaded mode (13 seconds vs. 104 seconds).
+
+2. **Python Multi-Threading Challenges**:  
+   The Python program's multi-threaded performance being slower than the single-threaded mode highlights potential areas for improvement. Utilizing multi-processing instead of multi-threading may mitigate issues related to Python's GIL.
+
+3. **Consistent Image Handling**:  
+   The resizing of the displayed images did not affect the processing of the original image size, ensuring accurate results in `result.jpg`.
+
+These observations underline the differences in threading efficiency between Java and Python and provide insights into optimizing the Python implementation for better performance.
+
 
 
 # How to Run the Project
