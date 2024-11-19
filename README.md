@@ -464,7 +464,7 @@ In `Main.java` and `Main1.java` I used this code to create a user interface for 
 
 In this code, I added a graphical user interface to enhance user interaction and visualize the image processing tasks. The `JFrame` serves as the main application window, and its configuration is handled in the `initializeGUI` method, where the title, size, and resizable properties are set. The window is made interactive by embedding a custom `JPanel` called `ImagePanel`, which is responsible for displaying the processed image.
 
-The `ImagePanel` class includes a paintComponent method that draws the image on the panel, ensuring it is updated whenever changes occur. To enable dynamic updates, the `updateImageDisplay` method modifies the current image displayed in the ImagePanel and repaints the panel to reflect the changes in real-time. This approach creates a seamless visualization experience during image processing, allowing users to observe updates as they happen.
+The `ImagePanel` class includes a paintComponent method that draws the image on the panel, ensuring it is updated whenever changes occur. To enable dynamic updates, the `updateImageDisplay` method modifies the current image displayed in the `ImagePanel` and repaints the panel to reflect the changes in real-time. This approach creates a seamless visualization experience during image processing, allowing users to observe updates as they happen.
 
 By incorporating these GUI elements, the code not only handles image processing logic but also makes the process accessible and visually engaging for users.
 
