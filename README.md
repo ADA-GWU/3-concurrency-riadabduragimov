@@ -103,9 +103,9 @@ In this project, I have implemented single-threaded image processing in both **M
 3. **Image Update**: Once a block is processed, I update the image to reflect the new color values. This progressive update helps visualize the image transformation.
 4. **Delay**: I have added a small delay after each block is processed to make the changes visible to the user in real-time.
 
-For this project, I have followed a single-threaded approach, which processes each block one after the other. While this approach works fine for smaller images, it is not as efficient for larger images or for scenarios where faster processing is needed. This single-threaded method is easier to understand and implement but does not take advantage of the full potential of multi-core processors.
+For this part, I have followed a single-threaded approach, which processes each block one after the other. While this approach works fine for smaller images, it is not as efficient for larger images or for scenarios where faster processing is needed. This single-threaded method is easier to understand and implement but does not take advantage of the full potential of multi-core processors.
 
-This is the code, that I used for `Main.java` and `Main1.java` to write single-threaded process:
+This is the code, that I wrote for `Main.java` and `Main1.java` to use single-threaded approach:
 
 ![Single-threaded](images/single_threaded.png)
 
@@ -115,7 +115,7 @@ This is the code, that I used for `Main.java` and `Main1.java` to write single-t
 
 ## Multi-threaded Processing in `Main.java` using `ExecutorService`
 
-In this project, I have implemented multi-threaded image processing in **Main.java** using Java's `ExecutorService` to achieve parallel processing of image blocks. This approach allows the program to process multiple blocks concurrently, taking advantage of multiple CPU cores to significantly speed up the image processing.
+I have implemented multi-threaded image processing in **Main.java** using Java's `ExecutorService` to achieve parallel processing of image blocks. This approach allows the program to process multiple blocks concurrently, taking advantage of multiple CPU cores to significantly speed up the image processing.
 
 ### ExecutorService Overview:
 - **ExecutorService** is a higher-level API in Java that manages and controls a pool of threads, providing an efficient way to handle concurrent tasks. In this project, I have used `ExecutorService` to submit image blocks for parallel processing.
@@ -136,15 +136,15 @@ In this project, I have implemented multi-threaded image processing in **Main.ja
 - **Improved Performance**: The main advantage of using `ExecutorService` in this project is the significant speed improvement. By processing blocks concurrently, the program can handle larger images in less time compared to the single-threaded approach.
 - **Efficient CPU Utilization**: Multi-threading ensures that all available CPU cores are utilized, leading to more efficient processing. This is particularly beneficial when working with large images or when real-time image processing is required.
 
-For this project, I have implemented multi-threaded image processing to leverage the benefits of parallelism, significantly enhancing performance when processing large images. Although multi-threading introduces some complexity in handling concurrent tasks, the improvements in execution time make it a worthwhile approach for this kind of image processing task.
+For this part, I have implemented multi-threaded image processing to leverage the benefits of parallelism, significantly enhancing performance when processing large images. Although multi-threading introduces some complexity in handling concurrent tasks, the improvements in execution time make it a worthwhile approach for this kind of image processing task.
 
-This is the code, that I used for `Main.java` to write multi-threaded process with using ExecutorService:
+This is the code, that I wrote for `Main.java` to use multi-threaded approach with using ExecutorService:
 
 ![ExecutorService](images/executor_service.png)
 
 ## Multi-threaded Processing in Main1.java with CountDownLatch and ReentrantLock
 
-In this project, I have implemented an advanced multi-threaded image processing approach in **Main1.java** using `CountDownLatch` and `ReentrantLock`. This implementation not only takes advantage of concurrent processing but also ensures proper synchronization and coordination between threads.
+I have implemented an advanced multi-threaded image processing approach in **Main1.java** using `CountDownLatch` and `ReentrantLock`. This implementation not only takes advantage of concurrent processing but also ensures proper synchronization and coordination between threads.
 
 ### What are they used for?
 
@@ -188,7 +188,7 @@ For this part, I wrote the code that shows how to write the multi-threaded proce
 
 
 ## Use of AtomicInteger for Synchronization in Main1.java
-In this project, I have implemented an efficient synchronization mechanism in **Main1.java** using the `AtomicInteger` class. This approach ensures thread-safe updates to shared resources without the need for explicit locks, making the program more lightweight and performant.
+In this part, I have used an efficient synchronization mechanism in **Main1.java** using the `AtomicInteger` class. This approach ensures thread-safe updates to shared resources without the need for explicit locks, making the program more lightweight and performant.
 
 ### What is `AtomicInteger`?
 
@@ -234,12 +234,12 @@ In this project, I have implemented an efficient synchronization mechanism in **
 
 ### Practical Benefits in Image Processing:
 
-In this project, the use of `AtomicInteger` has simplified synchronization while maintaining thread safety. This lightweight approach is particularly effective for applications like image processing, where numerous threads work on small, independent tasks. By avoiding locks and minimizing synchronization overhead, I have achieved an implementation that is both efficient and robust.
+The use of `AtomicInteger` has simplified synchronization while maintaining thread safety. This lightweight approach is particularly effective for applications like image processing, where numerous threads work on small, independent tasks. By avoiding locks and minimizing synchronization overhead, I have achieved an implementation that is both efficient and robust.
 
 This demonstrates the power of atomic classes in handling concurrency with minimal complexity.
 
 ## Key Differences and Challenges in Java Implementations
-In this project, I have explored various multi-threading techniques and synchronization mechanisms in Java, comparing their use across **Main.java** and **Main1.java**. Each implementation brings unique features and challenges, influencing performance, scalability, and code complexity.
+I have explored various multi-threading techniques and synchronization mechanisms in Java, comparing their use across **Main.java** and **Main1.java**. Each implementation brings unique features and challenges, influencing performance, scalability, and code complexity.
 
 ### Key Differences:
 
@@ -313,7 +313,7 @@ The combination of OpenCV for image operations and `threading` for concurrency e
 
 ## Single-threaded Image Processing Approach
 
-In this project, I implemented single-threaded image processing using Python with the `main.py` and `concurrency.py` files. The core idea behind this approach is to process an image sequentially by dividing it into smaller blocks and computing the average color for each block.
+I implemented single-threaded image processing using Python with the `main.py` and `concurrency.py` files. The core idea behind this approach is to process an image sequentially by dividing it into smaller blocks and computing the average color for each block.
 
 ### Process Overview:
 1. **Image Loading and Preprocessing**:  
@@ -333,12 +333,12 @@ In this project, I implemented single-threaded image processing using Python wit
 - The image is divided into smaller blocks, and each block is processed individually.
 - Real-time updates of the image are displayed during processing.
 
-For this part, I wrote the code to write single-threaded process for `concurrency.py`:
+For this part, I wrote the code to use single-threaded approach for `concurrency.py`:
 
 ![Single_threaded_python](images/single_threaded_python.png)
 
 ## Multi-threaded Image Processing Approach using Python's threading module
-In this project, I implemented multi-threaded image processing using Python’s `threading` module. This approach divides the image into multiple regions and processes each region in parallel using threads, enabling faster processing compared to the single-threaded approach.
+I implemented multi-threaded image processing using Python’s `threading` module. This approach divides the image into multiple regions and processes each region in parallel using threads, enabling faster processing compared to the single-threaded approach.
 
 ### Process Overview:
 1. **Image Loading and Preprocessing**:  
@@ -363,13 +363,13 @@ In this project, I implemented multi-threaded image processing using Python’s 
 - A `queue.Queue` is used for communication between threads, allowing the main thread to receive updated images and display them.
 - Multi-threading improves processing speed by taking advantage of multiple CPU cores.
 
-For this part, I wrote the code to write the multi-threaded process in `concurrency.py`:
+For this part, I wrote the code to use the multi-threaded approach in `concurrency.py`:
 
 ![Multi_threaded_python](images/multi_threaded_python.png)
 
 ## Thread Management and Synchronization in Python
 
-In this project, I implemented multi-threaded image processing using Python’s `threading` module. Thread management and synchronization are key aspects of ensuring that the image is processed efficiently and that updates are displayed in real time. Below is an overview of how threads are managed and synchronized during the processing workflow.
+I implemented multi-threaded image processing using Python’s `threading` module. Thread management and synchronization are key aspects of ensuring that the image is processed efficiently and that updates are displayed in real time. Below is an overview of how threads are managed and synchronized during the processing workflow.
 
 ### Thread Creation and Management:
 1. **Thread Class (`ImageProcessingThread`)**:  
@@ -393,11 +393,6 @@ For this part, I wrote code to use `ImageProcessingThread` in `concurrency.py`:
 
 3. **Thread Start and Joining**:  
    After creating all threads, the `start()` method is called on each thread to begin processing. Once all threads are started, the main thread waits for each worker thread to finish using the `join()` method. This ensures that the main thread only proceeds when all image processing tasks are complete, allowing for a synchronized final output.
-
-   ```python
-   # Wait for all threads to finish
-   for thread in threads:
-       thread.join()  # Main thread waits for each thread to finish
 
 ## Challenges Encountered in Python Implementation
 
@@ -485,7 +480,7 @@ In the main function, I enabled interactive plotting mode with `plt.ion()` to al
 
 After the processing is complete, I turned off the interactive mode using `plt.ioff()` and displayed the final processed image without grid updates. Finally, I ensured the graphical window closes properly by calling `plt.close()` to clean up resources. These elements create a user-friendly interface for visualizing the processing steps and final results.
 # Visualization and Performance Analysis
-I have uploaded this `image.jpg` to the images folder in repository and used it for checking the performance of each approach in both `Java` and `Python`:
+I have uploaded this `image.jpg` to the `images` folder in repository and used it for checking the performance of each approach in both `Java` and `Python`:
 
 ![Image](images/image.jpg)
 
