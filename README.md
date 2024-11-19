@@ -35,10 +35,6 @@
    - 7.1 [Java project](#java-project)
    - 7.2 [Python project](#python-project)
 8. [Conclusion](#conclusion)
-   - 8.1 [Summary of Findings from the Java and Python Implementations](#summary-of-findings-from-the-java-and-python-implementations)
-   - 8.2 [Lessons Learned from Multi-threading and Synchronization](#lessons-learned-from-multi-threading-and-synchronization)
-   - 8.3 [Potential Future Improvements](#potential-future-improvements)
-
 9. [References](#references)
 
 
@@ -614,4 +610,24 @@ By incorporating these GUI elements, the code not only handles image processing 
 ## Interface Design for Python
 In `main.py` I used this code to create a user interface for this project:
 
+![UserInterface4](images/user_interface4.png)
+
+![UserInterface5](images/user_interface5.png)
+
+For this part, I used matplotlib.pyplot to create a graphical interface for displaying the image and its progressive updates during the processing. The display_update function dynamically updates the displayed image with a grid overlay by clearing the previous plot using plt.clf(), rendering the updated image with plt.imshow, and adding grid lines using plt.axvline and plt.axhline. These updates are shown interactively by calling plt.draw() and pausing briefly with plt.pause(0.05) to control the refresh rate.
+
+I also added an event handler with the on_close function, which gracefully exits the program when the window is closed by the user. This ensures the program terminates cleanly and provides feedback through a printed message.
+
+In the main function, I enabled interactive plotting mode with plt.ion() to allow real-time updates during processing and displayed the initial image using display_update. To handle the close event, I connected the on_close function to the window's close action with plt.gcf().canvas.mpl_connect('close_event', on_close).
+
+After the processing is complete, I turned off the interactive mode using plt.ioff() and displayed the final processed image without grid updates. Finally, I ensured the graphical window closes properly by calling plt.close() to clean up resources. These elements create a user-friendly interface for visualizing the processing steps and final results.
+
+# How to Run the Project
+
+# Instructions to Run the Projects
+
+1. **Prerequisites**:  
+   Ensure you have a working Java Development Kit (JDK) installed. You can download and install the JDK from the [Oracle website](https://www.oracle.com/java/technologies/downloads/#jdk23-windows). After installation, verify the installation by running the following command in your terminal:
+   ```bash
+   javac -version
 
