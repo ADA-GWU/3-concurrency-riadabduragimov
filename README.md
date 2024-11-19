@@ -485,7 +485,7 @@ In the main function, I enabled interactive plotting mode with plt.ion() to allo
 
 After the processing is complete, I turned off the interactive mode using plt.ioff() and displayed the final processed image without grid updates. Finally, I ensured the graphical window closes properly by calling plt.close() to clean up resources. These elements create a user-friendly interface for visualizing the processing steps and final results.
 # Visualization and Performance Analysis
-I have uploaded this image.jpg to the images folder in repository and used it for checking the performance of each approach in both Java and Python:
+I have uploaded this `image.jpg` to the images folder in repository and used it for checking the performance of each approach in both `Java` and `Python`:
 
 ![Image](images/image.jpg)
 
