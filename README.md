@@ -1,5 +1,6 @@
 <h1 align = "center">Concurrency</h1>
 
+---
 # Table of Contents
 
 1. [Overview](#overview)
