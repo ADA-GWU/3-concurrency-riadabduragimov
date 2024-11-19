@@ -623,11 +623,40 @@ In the main function, I enabled interactive plotting mode with plt.ion() to allo
 After the processing is complete, I turned off the interactive mode using plt.ioff() and displayed the final processed image without grid updates. Finally, I ensured the graphical window closes properly by calling plt.close() to clean up resources. These elements create a user-friendly interface for visualizing the processing steps and final results.
 
 # How to Run the Project
-
-# Instructions to Run the Projects
-
+## Java Project
 1. **Prerequisites**:  
    Ensure you have a working Java Development Kit (JDK) installed. You can download and install the JDK from the [Oracle website](https://www.oracle.com/java/technologies/downloads/#jdk23-windows). After installation, verify the installation by running the following command in your terminal:
    ```bash
    javac -version
 
+2. **Prepare the Image File**:
+   Obtain an image file to process and place it in the same directory as `Main.java` and `Main1.java`. Note the filename (e.g., `example.jpg`).
+3. **Compile the Code**:
+   Open a terminal, navigate to the directory containing Main.java or Main1.java, and compile the files using:
+   ```bash
+   javac Main.java
+   javac Main1.java
+4. **Run the Program**:
+   Execute the program by passing three arguments:
+   
+   The image file name (e.g., `example.jpg`).
+   
+   The square size for processing (e.g., `50` for 50x50 squares).
+   
+   The mode (`S` for single-threaded or `M` for multi-threaded processing).
+   
+   Use the following command format:
+    ```bash
+    java Main <file_name> <square_size> <mode>
+    java Main1 <file_name> <square_size> <mode>
+    
+    // For Example
+    
+    java Main example.jpg 50 S    
+    java Main1 example.jpg 50 M
+5. **Output**:
+   The program processes the image and saves the result as result.jpg in the same directory. A GUI window displays the progress during processing.
+6. **Optional Configurations**:
+   Adjust the square size for finer or coarser processing blocks. Use single-threaded mode for a straightforward implementation or multi-threaded mode for faster    performance.
+7. **Troubleshooting**:
+   If you encounter issues, ensure the image file exists, the filename is correct, and the arguments are valid.
