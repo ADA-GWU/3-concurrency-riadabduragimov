@@ -36,7 +36,7 @@
 9. [References](#references)
 
 
-
+---
 # Overview
 In this project, I focused on implementing and comparing single-threaded and multi-threaded approaches to image processing, specifically using block-wise averaging to progressively blur images. The project explored the application of concurrency and synchronization techniques in both Java and Python.
 
@@ -46,7 +46,7 @@ Building on this experience, I developed a Python version of the project, using 
 
 Throughout the project, I focused on understanding and applying the principles of multi-threading and synchronization, as well as improving performance in image processing tasks. I also created a user-friendly interface that allows users to load an image, specify block sizes, and choose between single-threaded and multi-threaded processing modes.
  
-
+---
 # Background
 ## Image Processing and Block-wise Averaging
 Image processing is a fundamental technique used to manipulate and analyze digital images to improve their quality, extract useful information, or prepare images for further analysis in applications like computer vision and machine learning. In this project, the focus is on processing images through block-wise averaging, a method that divides the image into smaller, non-overlapping blocks and computes the average pixel value for each block. This technique is particularly useful for tasks like noise reduction and image smoothing, where the goal is to reduce the high-frequency noise while retaining the important structural information of the image.
@@ -70,6 +70,7 @@ In my implementation, synchronization was handled through different mechanisms i
 
 In Python, I used the threading module to implement multi-threaded processing. The threading.Lock was used to synchronize the threads, ensuring that only one thread at a time could modify shared resources or perform operations that could conflict. This approach allowed for concurrent image processing while maintaining data integrity.
 
+---
 # Java Implementation
 ## Overview of Java Programs (Main.java and Main1.java)
 The two Java programs, `Main.java` and `Main1.java`, perform image processing tasks where the goal is to divide an image into smaller square blocks, compute the average color of each block, and then fill each block with the calculated average color. Both programs can process images either in a single-threaded or multi-threaded manner, offering different approaches to improve performance and visualization.
@@ -285,7 +286,9 @@ I have explored various multi-threading techniques and synchronization mechanism
 
 Through these implementations, I have learned the importance of choosing the right concurrency tools based on the application requirements. While simplicity is valuable, there are cases where advanced tools like `AtomicInteger` and `ReentrantLock` provide essential control and performance benefits. Balancing readability, performance, and scalability is critical in designing robust multi-threaded applications.
 
+---
 # Python Implementation
+
 ## Libraries Used: OpenCV and threading
 
 ### OpenCV
@@ -400,7 +403,6 @@ For this part, I wrote code to use `ImageProcessingThread` in `concurrency.py`:
 
 The following section explains the thread management and synchronization techniques used in the Python implementation of multi-threaded image processing. `main.py` and `concurrency.py` files leverage Python’s `threading` module and other synchronization mechanisms to efficiently handle parallel tasks.
 
----
 
 #### 1. Thread Creation and Management
 
@@ -408,7 +410,6 @@ In the `main.py` file, threads were created and managed using Python's `threadin
 
 Thread management in this case was straightforward, with the main thread controlling the creation of worker threads and ensuring they performed their designated tasks in parallel. The `concurrency.py` file provided the logic for creating threads, handling exceptions, and ensuring that thread execution was coordinated with the main thread.
 
----
 
 #### 2. Synchronization with Queue
 
@@ -416,7 +417,6 @@ Synchronization in the implementation was achieved by using a thread-safe queue 
 
 The queue implemented in the `concurrency.py` file ensured that data could be safely transferred from multiple threads to the main thread. This approach prevented race conditions, as the queue’s inherent thread-safety mechanisms guaranteed that only one thread could access the data at a time, thus preventing potential conflicts.
 
----
 
 #### 3. Thread Synchronization and Wait Mechanism
 
@@ -424,7 +424,7 @@ The `main.py` file also utilized thread synchronization to ensure that all worke
 
 The threads were synchronized using the `ThreadPoolExecutor`'s `as_completed` method, which allowed the main thread to block until all worker threads had finished processing their image regions. This method ensured that the final image update only occurred once all threads completed their respective tasks.
 
----
+
 
 #### 4. Handling Thread Errors and Exceptions
 
@@ -432,7 +432,7 @@ Handling errors in a multi-threaded environment is essential to avoid unexpected
 
 This error-handling strategy allowed the application to continue processing even in the event of thread-specific issues. By logging exceptions, it was possible to debug and identify problems while ensuring that other threads could continue their work without being impacted.
 
----
+
 #### 5. Single-threaded vs. Multi-threaded Performance
 
 When I ran `main.py`, the execution time for both single-threaded and multi-threaded approaches was nearly identical. This unexpected outcome is due to the **Global Interpreter Lock (GIL)** in Python, which prevents multiple threads from executing Python bytecode simultaneously, even on multi-core processors. As a result, the multi-threaded implementation could not leverage true parallelism for this CPU-bound image processing task.
@@ -463,7 +463,6 @@ The `ImagePanel` class includes a paintComponent method that draws the image on 
 
 By incorporating these GUI elements, the code not only handles image processing logic but also makes the process accessible and visually engaging for users.
 
----
 
 ## Interface Design for Python
 In `main.py` I used this code to create a user interface for this project:
@@ -479,6 +478,8 @@ I also added an event handler with the `on_close` function, which gracefully exi
 In the main function, I enabled interactive plotting mode with `plt.ion()` to allow real-time updates during processing and displayed the initial image using `display_update`. To handle the close event, I connected the `on_close` function to the window's close action with `plt.gcf().canvas.mpl_connect('close_event', on_close)`.
 
 After the processing is complete, I turned off the interactive mode using `plt.ioff()` and displayed the final processed image without grid updates. Finally, I ensured the graphical window closes properly by calling `plt.close()` to clean up resources. These elements create a user-friendly interface for visualizing the processing steps and final results.
+
+---
 # Visualization and Performance Analysis
 I have uploaded this `image.jpg` to the `images` folder in repository and used it for checking the performance of each approach in both `Java` and `Python`:
 
@@ -531,7 +532,7 @@ I have uploaded this `image.jpg` to the `images` folder in repository and used i
 These observations underline the differences in threading efficiency between Java and Python and provide insights into optimizing the Python implementation for better performance.
 
 
-
+---
 # How to Run the Project
 ## Java Project
 #### Prerequisites:  
@@ -631,6 +632,7 @@ pip install opencv-python numpy matplotlib
    - The program will process the image and save the result as result.jpg in the same directory.
    - A GUI window will display the progress of the processing with grid lines over the image. The processing time will also be printed in the terminal.
 
+---
 # Conclusion
 
 In this project, I created and tested image processing programs in both Java and Python to compare the performance of single-threaded and multi-threaded approaches. I focused on implementing block-wise averaging to progressively blur images and explored the application of concurrency and synchronization techniques in these two programming languages.
