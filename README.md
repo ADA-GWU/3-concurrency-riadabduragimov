@@ -505,7 +505,7 @@ The performance of single-threaded and multi-threaded image processing approache
 
 ---
 
-### Conclusion
+### Result
 
 - **Java**: The multi-threaded approach (`main1.java`) was significantly more efficient than the single-threaded approach (`main.java`) for larger images, providing noticeable performance improvements.
 - **Python**: The multi-threaded approach (`main.py` and `concurrency.py`) did not provide any performance improvement over the single-threaded approach (`main.py`). This was due to the GIL, which prevents Python from executing multiple threads in true parallel for CPU-bound tasks like image processing. Thus, in this case, multi-threading in Python worked similarly to the single-threaded approach.
