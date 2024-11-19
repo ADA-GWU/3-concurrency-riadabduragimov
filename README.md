@@ -629,23 +629,28 @@ After the processing is complete, I turned off the interactive mode using plt.io
    ```bash
    javac -version
 
-2. **Prepare the Image File**:
+2. **Add Java to Environmental Variables**:
+   - During installation, make sure to check the option that says **Add Java to PATH**. This ensures that you can run Java from the terminal or command prompt.
+   - If you missed this step during installation, you can manually add Java's `bin` folder to your system's PATH environment variable.
+
+3. **Prepare the Image File**:
    Obtain an image file to process and place it in the same directory as `Main.java` and `Main1.java`. Note the filename (e.g., `example.jpg`).
-3. **Compile the Code**:
+ **Compile the Code**:
    Open a terminal, navigate to the directory containing Main.java or Main1.java, and compile the files using:
    ```bash
    javac Main.java
    javac Main1.java
-4. **Run the Program**:
+#### Run the Program:
    Execute the program by passing three arguments:
    
-   The image file name (e.g., `example.jpg`).
+   - The image file name (e.g., `example.jpg`).
    
-   The square size for processing (e.g., `50` for 50x50 squares).
+   - The square size for processing (e.g., `50` for 50x50 squares).
    
-   The mode (`S` for single-threaded or `M` for multi-threaded processing).
+   - The mode (`S` for single-threaded or `M` for multi-threaded processing).
    
    Use the following command format:
+   
     ```bash
     java Main <file_name> <square_size> <mode>
     java Main1 <file_name> <square_size> <mode>
@@ -654,9 +659,32 @@ After the processing is complete, I turned off the interactive mode using plt.io
     
     java Main example.jpg 50 S    
     java Main1 example.jpg 50 M
-5. **Output**:
-   The program processes the image and saves the result as result.jpg in the same directory. A GUI window displays the progress during processing.
-6. **Optional Configurations**:
-   Adjust the square size for finer or coarser processing blocks. Use single-threaded mode for a straightforward implementation or multi-threaded mode for faster    performance.
-7. **Troubleshooting**:
-   If you encounter issues, ensure the image file exists, the filename is correct, and the arguments are valid.
+#### Output:
+   - The program processes the image and saves the result as result.jpg in the same directory. A GUI window displays the progress during processing.
+#### Optional Configurations**:
+   - Adjust the square size for finer or coarser processing blocks. Use single-threaded mode for a straightforward implementation or multi-threaded mode for 
+    faster performance.
+#### Troubleshooting:
+   - If you encounter issues, ensure the image file exists, the filename is correct, and the arguments are valid.
+## Python Project
+#### Download Python:
+- If you don't have Python installed, you can download it from the official website: [Python Downloads](https://www.python.org/downloads/).
+- Follow the installation instructions for your operating system.
+
+#### Add Python to Environmental Variables:
+- During installation, make sure to check the option that says **Add Python to PATH**. This ensures that you can run Python from the terminal or command prompt.
+- If you missed this step during installation, you can manually add Python's `bin` folder to your system's PATH environment variable.
+
+#### Download Project Files:
+- Download the `main.py` and `concurrency.py` files from the **code folder** in the repository to your local system.
+
+#### Install Required Libraries:
+- Before running the project, make sure you have the required Python libraries installed:
+  - `opencv-python` for image processing.
+  - `numpy` for numerical operations.
+  - `matplotlib` for displaying images.
+  
+You can install these libraries using the following command:
+```bash
+pip install opencv-python numpy matplotlib
+
