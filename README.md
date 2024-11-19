@@ -520,6 +520,8 @@ I have uploaded this `image.jpg` to the images folder in repository and used it 
   - However, the actual processing was applied to the **original image size**, ensuring accurate results. 
   - Once the processing was complete, the output was saved as `result.jpg` in the same directory, maintaining the **original image size**.
 
+![Result](images/result.jpg)
+
 ## Observations and Recommendations
 
 1. **Java Multi-Threading Efficiency**:  
