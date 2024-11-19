@@ -598,7 +598,7 @@ I have uploaded an instruction video in [video](/video) folder, so that you can 
 - If you missed this step during installation, you can manually add Python's `bin` folder to your system's PATH environment variable.
 
 #### Download Project Files:
-- Download the `main.py` and `concurrency.py` files from the **code folder** in the repository to your local system.
+- Download the `main.py` and `concurrency.py` files from the [code](/code) folder in the repository to your local system.
 
 #### Adjust Number of Threads based on your PC (optional):
    - You can change the number of threads based on the number of cores on your PC.
