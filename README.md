@@ -28,10 +28,9 @@
    - 5.2 [Threading Performance in Python (GIL Considerations)](#threading-performance-in-python-gil-considerations)
    - 5.3 [Performance Optimization Techniques](#performance-optimization-techniques)
 
-6. User Interface
-   - 6.1 [Interface Design for Image Loading and Processing Mode Selection](#61-interface-design-for-image-loading-and-processing-mode-selection)
-   - 6.2 [Real-time Image Display and Updates](#62-real-time-image-display-and-updates)
-   - 6.3 [Saving Processed Image and User Interaction](#63-saving-processed-image-and-user-interaction)
+6. [User Interface](#user-interface)
+   - 6.1 [Interface Design for Java](#interface-design-for-java)
+   - 6.2 [Interface Design for Python](#interface-design-for-python)
 7. [How to Run the Project](#how-to-run-the-project)
    - 7.1 [Java project](#java-project)
    - 7.2 [Python project](#python-project)
@@ -592,4 +591,9 @@ To enhance the efficiency of image processing in the Python implementations (`ma
    - Extensive profiling was conducted to identify performance bottlenecks and determine the optimal number of threads for the workload.
    - Multiple configurations were tested to strike the right balance between parallelism and overhead.
 
+---
+# User Interface
+
+## Inteface Design for Java
+In `Main.java` and `Main1.java` I used this code to create a user interface for this project:
 
